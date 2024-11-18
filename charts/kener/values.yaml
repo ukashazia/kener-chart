@@ -110,36 +110,36 @@ site:
   home: "/"
   theme: dark
   github:
-      owner: "rajnandan1"
-      repo: "kener"
-      incidentSince: 72
+    owner: "rajnandan1"
+    repo: "kener"
+    incidentSince: 72
   metaTags:
-      description: "Your description"
-      keywords: "keyword1, keyword2"
+    description: "Your description"
+    keywords: "keyword1, keyword2"
   nav:
-      - name: "Documentation"
-        url: "/docs"
-      - name: "Github"
-        iconURL: "/github.svg"
-        url: "https://github.com/rajnandan1/kener"
+    - name: "Documentation"
+      url: "/docs"
+    - name: "Github"
+      iconURL: "/github.svg"
+      url: "https://github.com/rajnandan1/kener"
   siteURL: https://kener.ing
   hero:
-      title: Kener is a Open-Source Status Page System
-      subtitle: Let your users know what's going on.
+    title: Kener is a Open-Source Status Page System
+    subtitle: Let your users know what's going on.
   footerHTML: |
-      Made using
-      <a href="https://github.com/rajnandan1/kener" target="_blank" rel="noreferrer" class="font-medium underline underline-offset-4">
-        Kener
-      </a>
-      an open source status page system built with Svelte and TailwindCSS.
+    Made using
+    <a href="https://github.com/rajnandan1/kener" target="_blank" rel="noreferrer" class="font-medium underline underline-offset-4">
+      Kener
+    </a>
+    an open source status page system built with Svelte and TailwindCSS.
   i18n:
-      defaultLocale: "en"
-      locales:
-          en: "English"
-          hi: "हिन्दी"
-          zh-CN: "中文"
-          ja: "日本語"
-          vi: "Tiếng Việt"
+    defaultLocale: "en"
+    locales:
+      en: "English"
+      hi: "हिन्दी"
+      zh-CN: "中文"
+      ja: "日本語"
+      vi: "Tiếng Việt"
   pattern: "squares"
   font:
     cssSrc: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
