@@ -47,12 +47,12 @@ jobs:
         run: |
           echo ${{ secrets.GITHUB_TOKEN }} | helm registry login ghcr.io/1995parham/kener-chart --username ${{ github.repository_owner }} --password-stdin
 
-      - name: package soteria helm chart
+      - name: package kener helm chart
         run: |
           version=${{ github.ref_name }}
           helm package --version "${version##v}" ./charts/kener
 
-      - name: publish soteria chart to github container registry
+      - name: publish kener chart to github container registry
         run: |
           version=${{ github.ref_name }}
-          helm push "kener-${version##v}".tgz oci://ghcr.io/snapp-incubator/kener-chart
+          helm push "kener-${version##v}".tgz oci://ghcr.io/1995parham/kener-chart
