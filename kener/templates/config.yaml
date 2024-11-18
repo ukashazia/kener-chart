@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: {{ include "kener.fullname" . }}-config
 data:
-  site.yaml:
+  site.yaml: |
     {{- toYaml .Values.site | nindent 4 }}
-  monitors.yaml:
+  monitors.yaml: |
     {{- toYaml .Values.monitors | nindent 4 }}

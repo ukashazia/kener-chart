@@ -33,6 +33,8 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["/bin/bash"]
+          args: ["-c", "cd /app ; /usr/bin/node $NODE_ARGS /app/build.js ; /usr/bin/node $NODE_ARGS /app/src/lib/server/startup.js & /usr/bin/node $NODE_ARGS /app/main.js"]
           ports:
             - name: http
               containerPort: 3000
@@ -49,6 +51,8 @@ spec:
               readOnly: true
             - mountPath: "/app/database"
               name: database
+            - mountPath: "/run"
+              name: run
           {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
           {{- end }}
@@ -58,7 +62,10 @@ spec:
             claimName: {{ include "kener.fullname" . }}-database
         - name: config
           configMap:
-            claimName: {{ include "kener.fullname" . }}-config
+            name: {{ include "kener.fullname" . }}-config
+        - name: run
+          emptyDir:
+            sizeLimit: 500Mi
       {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
