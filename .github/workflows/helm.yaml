@@ -31,7 +31,7 @@ jobs:
       - name: run chart-testing (install)
         run: ct install --all
 
-      - name: run chart-testing (lint)
+      - name: run chart-testing (test)
         run: ct test --all
 
   release:
