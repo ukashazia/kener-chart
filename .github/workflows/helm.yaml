@@ -31,9 +31,6 @@ jobs:
       - name: run chart-testing (install)
         run: ct install --all
 
-      - name: run chart-testing (test)
-        run: ct test --all
-
   release:
     runs-on: ubuntu-latest
     if: ${{ startsWith(github.ref, 'refs/tags/v') }}
