@@ -6,6 +6,8 @@ metadata:
     {{- include "kener.labels" . | nindent 4 }}
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       {{- include "kener.selectorLabels" . | nindent 6 }}
@@ -27,8 +29,6 @@ spec:
       {{- end }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
-      strategy:
-        type: Recreate
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
