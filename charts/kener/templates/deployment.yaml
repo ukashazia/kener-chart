@@ -35,6 +35,9 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["/bin/bash"]
           args: ["-c", "cd /app ; /usr/bin/node $NODE_ARGS /app/build.js ; /usr/bin/node $NODE_ARGS /app/src/lib/server/startup.js & /usr/bin/node $NODE_ARGS /app/main.js"]
+          envFrom:
+            - secretRef:
+                name: {{ include "kener.fullname" . }}-env
           ports:
             - name: http
               containerPort: 3000

@@ -154,3 +154,9 @@ site:
 
 # https://kener.ing/docs/monitors
 monitors: []
+
+envs:
+  githubToken: ""
+  apiToken: ""
+  apiIP: ""
+  apiIPRegex: ""
