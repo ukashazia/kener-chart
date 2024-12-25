@@ -149,6 +149,15 @@ site:
 # https://kener.ing/docs/monitors
 monitors: []
 
+server:
+  database:
+    postgres:
+        host: localhost
+        port: 5432
+        user: kener
+        password: kener
+        database: kener
+
 envs:
   githubToken: ""
   apiToken: ""

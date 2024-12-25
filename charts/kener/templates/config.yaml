@@ -7,3 +7,5 @@ data:
     {{- toYaml .Values.site | nindent 4 }}
   monitors.yaml: |
     {{- toYaml .Values.monitors | nindent 4 }}
+  server.yaml: |
+    {{- toYaml .Values.server | nindent 4 }}
