@@ -2,8 +2,8 @@ apiVersion: v2
 name: kener
 description: Kener is a Modern Open-Source Status Page System
 type: application
-version: 0.0.1
-appVersion: "0.0.16"
+version: 0.0.2
+appVersion: "2.0.0"
 maintainers:
   - name: ukashazia
     url: https://github.com/ukashazia
