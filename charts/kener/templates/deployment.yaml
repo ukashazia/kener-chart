@@ -54,17 +54,12 @@ spec:
             - name: config
               mountPath: "/app/config/"
               readOnly: true
-            - mountPath: "/app/database"
-              name: database
             - mountPath: "/run"
               name: run
           {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
           {{- end }}
       volumes:
-        - name: database
-          persistentVolumeClaim:
-            claimName: {{ include "kener.fullname" . }}-database
         - name: config
           configMap:
             name: {{ include "kener.fullname" . }}-config
